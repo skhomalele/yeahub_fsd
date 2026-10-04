@@ -1,0 +1,25 @@
+:root {
+  /* colors */
+  --Purple-800: #5509cc;
+  --Purple-700: #6a0bff;
+  --Black-900: #191919;
+  --Black-800: #303030;
+  --Black-700: #474747;
+  --Black-500: #757575;
+  --Black-400: #8c8c8c;
+  --Black-200: #bababa;
+  --Black-50: #e8e8e8;
+  --Black-10: #f8f8f8; /* это бэкграунд*/
+  --White-100: #fff;
+  --Green-900: #008616;
+  --Green-007: #edf7ef;
+  --Shadow: rgba(106, 99, 118, 0.1);
+
+  /* font-weight */
+  --FW-400: 400;
+  --FW-500: 500;
+  --FW-600: 600;
+  --FW-700: 700;
+  --FW-800: 800;
+  --FW-900: 900;
+}
