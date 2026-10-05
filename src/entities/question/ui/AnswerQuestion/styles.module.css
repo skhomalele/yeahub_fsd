@@ -1,0 +1,42 @@
+.card {
+  display: flex;
+  padding: 16px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 8px;
+  background: var(--White-100);
+  box-shadow: 0 4px 10px 0 var(--Shadow);
+}
+
+.title {
+  padding-top: 8px;
+  color: var(--Black-800);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+.answer {
+  color: var(--Black-700);
+  line-height: 140%;
+}
+
+.answer p {
+  margin-bottom: 16px;
+}
+
+.answer p:first-child {
+  padding-top: 24px;
+}
+
+.answer pre {
+  background: linear-gradient(180deg, #ffffff 0%, #e8daff 100%);
+  color: var(--Black-100);
+  padding: 20px;
+  border-radius: 16px;
+  font-family: 'Fira Code', monospace;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}

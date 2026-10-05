@@ -11,6 +11,7 @@
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
+  font-weight: var(--FW-500);
 }
 
 h1,

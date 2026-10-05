@@ -1,0 +1,31 @@
+.rate {
+  display: flex;
+  background: var(--Black-10);
+  padding: 6px 10px;
+  gap: 12px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.stat {
+  margin: 0;
+  font-size: 14px;
+  color: var(--Black-700);
+}
+
+.value {
+  margin: 0;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: var(--Purple-700);
+  color: var(--White-100);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+@media (max-width: 500px) {
+  .rate p {
+    font-size: 12px;
+  }
+}
