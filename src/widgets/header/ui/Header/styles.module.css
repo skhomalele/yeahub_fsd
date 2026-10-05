@@ -1,0 +1,128 @@
+.header {
+  width: 100%;
+  background: var(--White-100);
+}
+
+.container {
+  max-width: 1276px;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 64px;
+  padding: 8px 0;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.loginWrapper {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.logo {
+  height: 33px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.buttonLogin {
+  font-weight: var(--FW-600);
+  line-height: 110%;
+  color: var(--Purple-700);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.buttonLogin:hover {
+  opacity: 0.9;
+}
+
+.buttonRegister {
+  border-radius: 12px;
+  padding: 13px 30px;
+  background: var(--Purple-700);
+  font-size: 18px;
+  color: var(--White-100);
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
+.buttonRegister:hover {
+  opacity: 0.9;
+}
+
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .desktopNav {
+    display: none;
+  }
+  .mobileNav {
+    display: block;
+  }
+
+  .loginWrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buttonRegister,
+  .buttonLogin {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    padding: 5px 8px;
+    color: var(--Black-900);
+    line-height: 140%;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+  }
+
+  .buttonRegister:hover,
+  .buttonLogin:hover {
+    background: #f4f4f4;
+  }
+}
+
+@media (max-width: 768px) {
+  .left {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .left {
+    gap: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .left {
+    gap: 20px;
+  }
+  .yeahubLogo {
+    display: none;
+  }
+  .container {
+    padding: 0 10px;
+  }
+}

@@ -1,0 +1,37 @@
+.wrapper {
+  position: relative;
+}
+
+.dropdownCollapsed {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 0 0 6px 6px;
+  color: var(--Black-900);
+}
+
+.iconOpen {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 20px);
+  z-index: 10;
+  background: var(--White-100);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  min-width: 160px;
+  border-radius: 16px;
+  padding: 8px;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
