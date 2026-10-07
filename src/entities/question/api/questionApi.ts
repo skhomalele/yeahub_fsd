@@ -8,6 +8,7 @@ export const questionApi = baseApi.injectEndpoints({
       query: (params) => ({
         url: 'questions/public-questions',
         params: params || undefined,
+        keepUnusedDataFor: 300,
       }),
       providesTags: ['Questions'],
     }),

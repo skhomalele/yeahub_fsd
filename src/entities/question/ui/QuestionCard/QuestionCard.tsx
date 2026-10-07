@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getQuestionDetailRoute } from '@/shared/config/routes';
+
 import styles from './styles.module.css';
 
 import accordeon from '@/shared/assets/icons/accordeon.svg';
@@ -9,9 +11,13 @@ import { QuestionStats } from '../QuestionStats/QuestionStats';
 
 interface Props {
   question: Question;
+  specializationSlug?: string;
 }
 
-export const QuestionCard = ({ question }: Props) => {
+export const QuestionCard = ({
+  question,
+  specializationSlug = 'react-frontend-developer',
+}: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [height, setHeight] = useState(0);
@@ -49,7 +55,7 @@ export const QuestionCard = ({ question }: Props) => {
 
   const handleReadMore = (e: React.MouseEvent) => {
     e.stopPropagation();
-    navigate(`/questions/${question.slug}`);
+    navigate(getQuestionDetailRoute(specializationSlug, question.slug));
   };
 
   return (

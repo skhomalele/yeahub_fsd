@@ -21,8 +21,8 @@ export interface QuestionFilterParams {
   page?: number;
   limit?: number;
   titleOrDescription?: string;
-  specializationId?: number | null;
+  specializationSlug?: string;
   skills?: number[];
-  complexity?: number[];
+  complexity?: string[];
   rate?: number[];
 }
