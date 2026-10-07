@@ -1,0 +1,50 @@
+.backButton {
+  position: relative;
+  top: -16px;
+  left: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--Purple-700);
+  font-weight: var(--FW-500);
+  line-height: 120%;
+  transition: opacity 0.2s ease;
+}
+
+.backButton:hover {
+  opacity: 0.8;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 804px;
+  width: 100%;
+  flex: 1;
+  min-width: 0;
+}
+
+.mentorMobileOnly {
+  display: none;
+}
+
+.desktopOnly {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .leftColumn {
+    max-width: 100%;
+  }
+  .desktopOnly {
+    display: none;
+  }
+  .mentorMobileOnly {
+    display: block;
+    margin-top: 20px;
+  }
+}

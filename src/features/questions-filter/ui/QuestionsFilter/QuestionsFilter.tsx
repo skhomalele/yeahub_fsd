@@ -1,8 +1,10 @@
-import { SearchInput, TagGroup, Tag, TagGroupSkeleton } from '@/shared/ui';
-import { useQuestionsFilter } from '../model/useQuestionsFilter';
 import { useGetSkillsQuery } from '@/entities/skill';
 import { useGetSpecializationsQuery } from '@/entities/specialization';
+import { SearchInput, TagGroup, Tag, TagGroupSkeleton } from '@/shared/ui';
 import { LEVEL, RATING } from '@/shared/config/constants';
+
+import { useQuestionsFilter } from '../../model/useQuestionsFilter';
+
 import styles from './styles.module.css';
 
 export const QuestionsFilter = () => {
@@ -61,7 +63,7 @@ export const QuestionsFilter = () => {
         </TagGroup>
       ) : null}
 
-      <TagGroup title="Уровень" items={LEVEL} limit={5}>
+      <TagGroup title="Сложность" items={LEVEL} limit={5}>
         {(item) => (
           <Tag
             key={item.id}
@@ -72,7 +74,7 @@ export const QuestionsFilter = () => {
         )}
       </TagGroup>
 
-      <TagGroup title="Оценка" items={RATING} limit={5}>
+      <TagGroup title="Рейтинг" items={RATING} limit={5}>
         {(item) => (
           <Tag
             key={item.id}

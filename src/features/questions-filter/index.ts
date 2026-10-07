@@ -1,1 +1,2 @@
-export { QuestionsFilter } from './ui/QuestionsFilter';
+export { QuestionsFilter } from './ui/QuestionsFilter/QuestionsFilter';
+export { useQuestionsFilter } from './model/useQuestionsFilter';

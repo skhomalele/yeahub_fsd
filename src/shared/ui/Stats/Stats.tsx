@@ -5,7 +5,7 @@ interface Props {
   title: string;
 }
 
-export const QuestionStats = ({ stats, title }: Props) => {
+export const Stats = ({ stats, title }: Props) => {
   if (stats === undefined || stats === null) return null;
 
   return (

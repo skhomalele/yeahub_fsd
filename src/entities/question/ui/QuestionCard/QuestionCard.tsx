@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { Stats } from '@/shared/ui';
 import { getQuestionDetailRoute } from '@/shared/config/routes';
+import accordeon from '@/shared/assets/icons/accordeon.svg';
+
+import { QuestionAnswer } from '../QuestionAnswer/QuestionAnswer';
+import type { Question } from '../../model/types';
 
 import styles from './styles.module.css';
-
-import accordeon from '@/shared/assets/icons/accordeon.svg';
-import type { Question } from '../../model/types';
-import { AnswerQuestion } from '../AnswerQuestion/AnswerQuestion';
-import { QuestionStats } from '../QuestionStats/QuestionStats';
 
 interface Props {
   question: Question;
@@ -24,6 +25,7 @@ export const QuestionCard = ({
 
   const contentRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,11 +42,9 @@ export const QuestionCard = ({
         setIsOpenMenu(false);
       }
     };
-
     if (isOpenMenu) {
       document.addEventListener('mousedown', handleClickOutside);
     }
-
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpenMenu]);
 
@@ -68,20 +68,17 @@ export const QuestionCard = ({
           className={`${styles.accordeonIcon} ${isOpen ? styles.rotated : ''}`}
         />
       </div>
-
       <div ref={contentRef} className={styles.cardContent} style={{ maxHeight: `${height}px` }}>
         <div className={styles.bodyInner}>
           <div className={styles.metaRow}>
             <div className={styles.meta}>
-              <QuestionStats stats={question?.rate} title="Рейтинг" />
-              <QuestionStats stats={question?.complexity} title="Сложность" />
+              <Stats stats={question?.rate} title="Рейтинг" />
+              <Stats stats={question?.complexity} title="Сложность" />
             </div>
-
             <div className={styles.optionsWrapper} ref={menuRef}>
               <button className={styles.optionsButton} onClick={handleMenuToggle}>
                 &#8942;
               </button>
-
               {isOpenMenu && (
                 <div className={styles.dropdown}>
                   <button className={styles.dropdownBtn} onClick={handleReadMore}>
@@ -91,8 +88,7 @@ export const QuestionCard = ({
               )}
             </div>
           </div>
-
-          <AnswerQuestion answer={question?.shortAnswer} withCard={false} />
+          <QuestionAnswer answer={question?.shortAnswer} withCard={false} />
         </div>
       </div>
     </article>

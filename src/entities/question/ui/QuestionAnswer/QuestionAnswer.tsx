@@ -1,5 +1,7 @@
+import { sanitizeHtml } from '@/shared/lib/utils/sanitizeHtml';
+
 import type { Question } from '../../model/types';
-import { sanitizeHtml } from '@/shared/lib/utils/sanitizeHtml'; // путь зависит от твоего public API
+
 import styles from './styles.module.css';
 
 interface Props {
@@ -8,7 +10,7 @@ interface Props {
   withCard?: boolean;
 }
 
-export const AnswerQuestion = ({ answer, title, withCard = true }: Props) => {
+export const QuestionAnswer = ({ answer, title, withCard = true }: Props) => {
   const safeHtml = sanitizeHtml(answer);
 
   return (

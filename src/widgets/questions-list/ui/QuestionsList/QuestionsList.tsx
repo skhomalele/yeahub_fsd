@@ -1,7 +1,12 @@
-import { useGetQuestionsQuery, QuestionCard, type QuestionFilterParams } from '@/entities/question';
+import {
+  useGetQuestionsQuery,
+  QuestionCard,
+  QuestionCardSkeleton,
+  type QuestionFilterParams,
+} from '@/entities/question';
+
 import styles from './styles.module.css';
-import { Pagination } from '@/features/pagination/ui';
-import { QuestionCardSkeleton } from '@/entities/question/ui/QuestionCard/QuestionCardSkeleton';
+import { Pagination } from '@/features/pagination';
 
 interface Props {
   params: QuestionFilterParams;
@@ -38,7 +43,6 @@ export const QuestionsList = ({ params, onPageChange }: Props) => {
           />
         ))}
       </div>
-
       <Pagination
         countData={data.total}
         currentPage={params.page || 1}

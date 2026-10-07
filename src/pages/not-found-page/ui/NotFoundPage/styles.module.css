@@ -1,0 +1,21 @@
+.container {
+  max-width: 1276px;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+.button {
+  font-weight: var(--FW-600);
+  line-height: 110%;
+  color: var(--Purple-700);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.9;
+}

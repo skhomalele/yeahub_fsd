@@ -1,20 +1,21 @@
 import { useState } from 'react';
-import { MobileDrawer, PrimaryColumn, SecondaryColumn } from '@/shared/ui';
-import { QuestionsFilter } from '@/features/questions-filter';
-import { useQuestionsFilter } from '@/features/questions-filter/model/useQuestionsFilter';
-import { useGetSpecializationsQuery } from '@/entities/specialization/api/specializationApi';
-import { useDebounce } from '@/shared/lib/hooks/useDebounce';
+
 import { QuestionsList } from '@/widgets/questions-list';
+import { QuestionsFilter, useQuestionsFilter } from '@/features/questions-filter';
+import { useGetSpecializationsQuery } from '@/entities/specialization';
+import { MobileDrawer, PrimaryColumn, SecondaryColumn } from '@/shared/ui';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce';
 
 export const QuestionsPage = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-
   const { search, specializationSlug, skills, complexities, rates, updateFilter, page } =
     useQuestionsFilter();
+
   const debouncedSearch = useDebounce(search, 500);
   const { data: specData } = useGetSpecializationsQuery();
+
   const currentSpec = specData?.data?.find((s) => s.slug === specializationSlug);
-  const pageTitle = currentSpec ? `Вопросы: ${currentSpec.title}` : 'Вопросы';
+  const pageTitle = currentSpec ? `Вопросы: ${currentSpec.title}` : 'Все вопросы';
 
   const listParams = {
     page,
